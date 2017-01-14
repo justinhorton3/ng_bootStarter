@@ -1,15 +1,18 @@
+// Angular
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from "@angular/router";
 
-
-import { AppComponent } from './app.component';
+// Modules
 import { CoreModule } from './core/core.module';
+import { ColorsModule } from './features/Colors/colors.module';
+import { AggregateModule } from './features/Aggregate/aggregate.module';
 
-import { HomeComponent } from './features/home/home.component';
-import { AggregateModule } from './features/aggregate/aggregate.module';
+// Components
+import { AppComponent } from './app.component';
+import { HomeComponent } from './features/Home/home.component';
 
 @NgModule({
   imports: [
@@ -18,6 +21,7 @@ import { AggregateModule } from './features/aggregate/aggregate.module';
     HttpModule,
     CoreModule,
     AggregateModule,
+    ColorsModule,
 
     RouterModule.forRoot([
       {

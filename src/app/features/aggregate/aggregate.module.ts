@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { AggregateComponent } from './aggregate.component'
+import { AggregateComponent } from './aggregate.component';
 
 @NgModule({
     imports: [
@@ -10,11 +10,11 @@ import { AggregateComponent } from './aggregate.component'
         CommonModule,
         RouterModule.forChild([
             {
-                path: 'Aggregate',
+                path: 'aggregate',
                 component: AggregateComponent,
                 data: {
                     createSidebarEntry : true,
-                    pathDisplayText: "Aggregate",
+                    pathDisplayText: "aggregate",
                     pathIcon: `fa fa-server fa-lg pull-right`,
                     order: 2
                 }

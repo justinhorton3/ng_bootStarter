@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Welcome {{userid}}!</h1>
+  </div>
+  <div class="row">
+    <div *ngFor="let shipment of shipments" class="col-md-4">
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><b>{{ shipment.shipid }}</b><button (click)="deleteShipment(shipment.id)" class="btn btn-danger btn-xs pull-right">Delete</button></h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="label label-default">Origin</span> {{ shipment.origin }}</li>
+          <li class="list-group-item"><span class="label label-default">Destination</span> {{ shipment.destination }}</li>
+          <li class="list-group-item"><span class="label label-default">Status</span> {{ shipment.status }}</li>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">Driver</h5>
+            </div>
+
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="list-group-item"><span class="label label-default">Name</span> {{ shipment.driver.name }}</li>
+                <li class="list-group-item"><span class="label label-default">Phone</span> {{ shipment.driver.phoneNumber }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h5 class="panel-title">Pings</h5>
+            </div>
+
+            <div class="panel-body" style="height: 200px; overflow: auto;">
+              <ul *ngFor="let ping of shipment.pings" class="list-group">
+                <li class="list-group-item"><span class="label label-default">Time</span> {{ ping.pingtime | date:'yyyy/MM/dd HH:mm:ss' }}</li>
+                <li class="list-group-item"><span class="label label-default">Latitude</span> {{ ping.latitude }}</li>
+                <li class="list-group-item"><span class="label label-default">Longitude</span> {{ ping.longitude }}</li>
+              </ul>
+            </div>
+          </div>
+        </ul>
+        <form #f="ngForm" (ngSubmit)="createPing(f.value, f.valid)" novalidate>
+          <input type="text" class="form-control" id="pingId"
+                 name="id" [(ngModel)]="shipment.newping.id"
+                 #shipid="ngModel" style="display:none;">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Add Ping <button id="showPingButton" (click)="shipment.showNewPing = ! shipment.showNewPing" class="btn btn-default btn-xs pull-right" type="button">{{ shipment.showNewPing ? 'Hide' : 'Show'}}</button></h3>
+            </div>
+            <div class="panel-body" [hidden]="!shipment.showNewPing">
+              <div class="form-group">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <label for="pingLatitude">Latitude</label>
+                    <input type="text" class="form-control" id="pingLatitude"
+                           name="latitude" [(ngModel)]="shipment.newping.latitude"
+                           #origin="ngModel">
+                  </li>
+                  <li class="list-group-item">
+                    <label for="pingLongitude">Longitude</label>
+                    <input type="text" class="form-control" id="pingLongitude"
+                           name="longitude" [(ngModel)]="shipment.newping.longitude"
+                           #destination="ngModel">
+                  </li>
+                </ul>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm pull-right" id="addPingButton">Add Ping</button>
+            </div>
+          </div>
+        </form>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-4">
+      <form #f="ngForm" (ngSubmit)="createShipment(f.value, f.valid)" novalidate>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add Shipment</h3>
+          </div>
+          <div class="panel-body">
+
+            <div class="form-group">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <label for="shipmentShipid">Shipid</label>
+                  <input type="text" class="form-control" id="shipmentShipid"
+                         name="shipid" [(ngModel)]="newShipment.shipid"
+                         #shipid="ngModel">
+                </li>
+                <li class="list-group-item">
+                  <label for="shipmentOrigin">Origin</label>
+                  <input type="text" class="form-control" id="shipmentOrigin"
+                         name="origin" [(ngModel)]="newShipment.origin"
+                         #origin="ngModel">
+                </li>
+                <li class="list-group-item">
+                  <label for="shipmentDestination">Destination</label>
+                  <input type="text" class="form-control" id="shipmentDestination"
+                         name="destination" [(ngModel)]="newShipment.destination"
+                         #destination="ngModel">
+                </li>
+                <li class="list-group-item">
+                  <label for="shipmentStatus">Status</label>
+                  <input type="text" class="form-control" id="shipmentStatus"
+                         name="status" [(ngModel)]="newShipment.status"
+                         #status="ngModel">
+                </li>
+              </ul>
+            </div>
+            <div class="form-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h5 class="panel-title">Driver</h5>
+                </div>
+                <div class="panel-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      <label for="shipmentDriverName">Name</label>
+                      <input type="text" class="form-control" id="shipmentDriverName"
+                             name="drivername" [(ngModel)]="newShipment.driver.name"
+                             #drivername="ngModel">
+                    </li>
+                    <li class="list-group-item">
+                      <label for="shipmentDriverPhone">Phone</label>
+                      <input type="text" class="form-control" id="shipmentDriverPhone"
+                             name="driverphone" [(ngModel)]="newShipment.driver.phoneNumber"
+                             #driverphone="ngModel">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm pull-right">Create Shipment</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

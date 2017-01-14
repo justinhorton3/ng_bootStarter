@@ -1,0 +1,10 @@
+<div class="col-sm-3 col-md-2 sidebar">
+  <ul class="nav nav-sidebar">
+    <li *ngFor="let route of appRoutes" class="routeWrapper" [routerLink]="route.path" [routerLinkActive]="['is-active']">
+      <a href="javascript:void(0);">
+        <span [class]="route.icon"></span>
+        <span class="routeDisplayText">{{route.display}}</span>
+      </a>
+    </li>
+  </ul>
+</div>

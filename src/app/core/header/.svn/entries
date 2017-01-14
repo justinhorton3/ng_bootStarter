@@ -1,0 +1,72 @@
+10
+
+dir
+0
+svn://svnprod/app_UI_StyleGuide/branches/boot-aggregator/src/app/core/header
+svn://svnprod/app_UI_StyleGuide
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2f2eb670-5901-0010-b7ba-d966646f9aed
+
+header.component.css
+file
+
+
+
+add
+
+header.component.html
+file
+
+
+
+add
+
+header.component.ts
+file
+
+
+
+add
+
+header.module.ts
+file
+
+
+
+add
+
+0f54cab76b363f62019e1731a5b06ec3
+
+
+
+
+
+
+
+
+
+
+
+copied
+svn://svnprod/app_UI_StyleGuide/branches/ngBoot_parentPom/Client/src/main/client/src/app/components/header/header.module.ts
+11
+

@@ -8,3 +8,4 @@ node
 node_modules
 builds/**/images/*
 src/app/main/resources/static/*
+target

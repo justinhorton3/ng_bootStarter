@@ -6,4 +6,27 @@ import {Component} from '@angular/core';
     styleUrls : [ "./header.component.css"]
 })
 
-export class HeaderComponent{ }
+export class HeaderComponent{
+    private isFullScreen: boolean = false;
+
+    getFullScreenIcon():any {
+        return this.isFullScreen ? 'icon-size-actual':'icon-size-fullscreen';
+    }
+
+    toggleFullScreen() {
+        let doc:any = window.document;
+        let docEl:any = doc.documentElement;
+
+        let requestFullScreen:any = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        let cancelFullScreen:any = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+            requestFullScreen.call(docEl);
+            this.isFullScreen = true;
+        }
+        else {
+            cancelFullScreen.call(doc);
+            this.isFullScreen = false;
+        }
+    }
+}

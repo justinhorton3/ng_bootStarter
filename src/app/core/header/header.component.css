@@ -9,34 +9,35 @@ nav.navbar.navbar-fixed-top {
   border: 0;
 }
 nav .navbar-nav>li>a {
-  padding: 25px 20px;
+  padding: 20px 20px;
   color: #A7A9AC;
 }
-nav .navbar-nav>li:nth-of-type(2)>a {
+nav .navbar-nav>li:nth-of-type(4)>a {
   margin-right: 10px;
 }
 
 nav .profile-img img {
-  height: 70px;
+  height: 60px;
   border-bottom: 4px solid #3594D5;
 }
 
 .brand-container .navbar-brand {
   width: 225px;
-  height:70px;
+  height:60px;
+  padding:12px;
   text-align: center;
 
 }
 .brand-container .navbar-brand>img {
   display: inline-block;
-  line-height: 30px;
+  line-height: 20px;
   height: 35px;
 }
 
 .app-name {
   display: inline-block;
-  padding: 15px 0;
-  line-height: 40px;
+  padding: 20px 0;
+  line-height: 20px;
   color: #404040;
   font-size: 18px;
   float:left; /*Hack for Header*/

@@ -85,7 +85,7 @@
 						
 						<!--Remove the following filesets to speed up compile time-->
 						<fileset>
-							<directory>npm</directory>
+							<directory>node</directory>
 						</fileset>
 						<fileset>
 							<directory>node_modules</directory>

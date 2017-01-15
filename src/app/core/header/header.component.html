@@ -11,8 +11,15 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:void(0);"><i class="icon-magnifier large-icons"></i></a></li>
+        <li><a href="javascript:void(0);"  (click)="toggleFullScreen()" ><i class="icon-magnifier large-icons"></i></a></li>
         <li><a href="javascript:void(0);"><i class="icon-bell large-icons"></i></a></li>
+        <li><a href="javascript:void(0);"><i class="icon-drawer large-icons"></i></a></li>
+        <li>
+          <a href="javascript:void(0);"
+             (click)="toggleFullScreen()" >
+            <i [ngClass]="getFullScreenIcon()" class=" large-icons"></i>
+          </a>
+        </li>
         <li class="profile-img"><img src="assets/img/userIcon.PNG" alt=""></li>
       </ul>
     </div>

@@ -7,7 +7,6 @@ import { UiComponent } from './ui.component';
 
 @NgModule({
     imports: [
-        RouterModule,
         CommonModule,
         RouterModule,
         RouterModule.forChild([

@@ -42,3 +42,25 @@ nav .profile-img img {
   font-size: 18px;
   float:left; /*Hack for Header*/
 }
+
+.navbar-mobile-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 65px;
+}
+
+.navbar-brand-center a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 250px;
+}
+
+.navbar-brand-center a img {
+  margin: 0 auto;
+}
+.navbar-mobile-container i {
+  padding: 0 10px;
+}

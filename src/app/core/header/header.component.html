@@ -1,27 +1,40 @@
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-fixed-top" role="navigation">
   <div class="container-fluid">
 
-    <div class="navbar-header">
-      <div class="brand-container">
-        <a class="navbar-brand" href="javascript:void(0);"><img src="assets/img/jbh-logo.png" alt=""></a>
+    <div class="navbar-container hidden-xs">
+      <div class="navbar-header">
+        <div class="brand-container">
+          <a class="navbar-brand" href="javascript:void(0);"><img src="assets/img/jbh-logo.png" alt="JB Hunt Logo"></a>
+          <span class="app-name hidden-xs"> AngularBoot Starter</span>
+        </div>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="javascript:void(0);"  (click)="toggleFullScreen()" ><i class="icon-magnifier large-icons"></i></a></li>
+          <li><a href="javascript:void(0);"><i class="icon-bell large-icons"></i></a></li>
+          <li><a href="javascript:void(0);"><i class="icon-drawer large-icons"></i></a></li>
+          <li>
+            <a href="javascript:void(0);"
+               (click)="toggleFullScreen()" >
+              <i [ngClass]="getFullScreenIcon()" class=" large-icons"></i>
+            </a>
+          </li>
+          <li class="profile-img"><img src="assets/img/userIcon.PNG" alt=""></li>
+        </ul>
       </div>
     </div>
 
-    <span class="app-name hidden-xs"> AngularBoot Starter</span>
-
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:void(0);"  (click)="toggleFullScreen()" ><i class="icon-magnifier large-icons"></i></a></li>
-        <li><a href="javascript:void(0);"><i class="icon-bell large-icons"></i></a></li>
-        <li><a href="javascript:void(0);"><i class="icon-drawer large-icons"></i></a></li>
-        <li>
-          <a href="javascript:void(0);"
-             (click)="toggleFullScreen()" >
-            <i [ngClass]="getFullScreenIcon()" class=" large-icons"></i>
-          </a>
-        </li>
-        <li class="profile-img"><img src="assets/img/userIcon.PNG" alt=""></li>
-      </ul>
+    <div class="navbar-mobile-container  hidden-sm hidden-md hidden-lg">
+      <span class="nav-left pull-left">
+        <i class="icon-menu icons"></i>
+      </span>
+      <span class="navbar-brand-center">
+         <a class="navbar-brand" href="javascript:void(0);"><img src="assets/img/jbh-logo.png" style="height:35px; width:auto;" alt="JB Hunt Logo"></a>
+      </span>
+      <span class="nav-right pull-right">
+        <i class="icon-options-vertical icons"></i>
+      </span>
     </div>
   </div>
 </nav>

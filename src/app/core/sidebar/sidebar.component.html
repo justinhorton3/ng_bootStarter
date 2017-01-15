@@ -15,14 +15,25 @@
     </div>
 
     <ul *ngIf="!showAppDrawer" class="nav nav-sidebar">
-        <li *ngFor="let route of appRoutes" class="routeWrapper"
-            [routerLink]="route.path"
-            [routerLinkActive]="['is-active']">
+        <li *ngFor="let route of displayRoutes" class="routeWrapper"
+            [ngClass]="{'deadRouteWrapper' : route.hasChildren, 'routeWrapper' : !route.hasChildren}"
+            (click)="sidebarItemClicked(route)">
 
             <a href="javascript:void(0);">
                 <span class="routeDisplayText">{{route.display}}</span>
                 <i [class]="route.icon"></i>
             </a>
+
+            <ul *ngIf="route.hasChildren" class="nav nav-sidebar-child"
+                [ngClass]="{'open': subMenusConfig[route.path]==true}" >
+
+                <li *ngFor="let childRoute of route.children">
+                    <a href="javascript:void(0);" class="" (click)="sidebarItemClicked(route, childRoute)">
+                        <span class="">{{childRoute.display}}</span>
+                        <!--<i [class]="childRoute.icon"></i>-->
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 

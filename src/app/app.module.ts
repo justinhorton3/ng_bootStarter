@@ -7,7 +7,7 @@ import { RouterModule } from "@angular/router";
 
 // Modules
 import { CoreModule } from './core/core.module';
-import { ColorsModule } from './features/Colors/colors.module';
+import { UiModule } from './features/ui/ui.module';
 import { AggregateModule } from './features/Aggregate/aggregate.module';
 
 // Components
@@ -21,7 +21,7 @@ import { HomeComponent } from './features/Home/home.component';
     HttpModule,
     CoreModule,
     AggregateModule,
-    ColorsModule,
+    UiModule,
 
     RouterModule.forRoot([
       {

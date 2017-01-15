@@ -1,5 +1,10 @@
 .DS_Store
-node_modules
+.idea
 .tmp
 .sass-cache
+*.iml
+aggregator.iml
+node
+node_modules
 builds/**/images/*
+src/app/main/resources/static/*

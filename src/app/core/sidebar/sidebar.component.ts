@@ -1,5 +1,4 @@
-import { Component, OnInit, Input ,Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import * as _ from 'lodash';
@@ -21,7 +20,9 @@ export class SidebarComponent implements OnInit {
   showAppDrawer: boolean = false;
 
   test : string = "sidebar works!";
-  appRoutes : any[] = [];
+
+  displayRoutes : any[] = [];
+  subMenusConfig:any = {};
 
   constructor(
       private _router: Router,
@@ -60,31 +61,86 @@ export class SidebarComponent implements OnInit {
 
   }
 
+  sidebarItemClicked(route, childRoute){
+
+    console.log("sidebarItemClicked : ", route);
+
+    if(!childRoute){
+      if(!route.hasChildren){
+        this._router.navigateByUrl(route.path);
+      }else{
+        console.log("submenuconfig before", this.subMenusConfig[route.path]);
+        this.subMenusConfig[route.path] = !(this.subMenusConfig[route.path]);
+        console.log("submenuconfig after", this.subMenusConfig[route.path]);
+      }
+    }else{
+      this._router.navigateByUrl(route.path + "/" + childRoute.path);
+    }
+
+  }
+
   ngOnInit(): void {
+
     let routes = this._router.config;
     let currentRoute = this._router.routerState.snapshot.root;
-    let _Array: any = [];
+    let appRoutes:any[] = [];
 
     routes.forEach( value => {
 
-      if(value.data){
-        let _OldData: any = value.data;
-        let _NewData: any = {};
+      let routeMetaData:any = value.data;
+      let routeConfig:any = {};
 
-        if(_OldData.createSidebarEntry){
+      if(routeMetaData){
 
-          _NewData = {
+        if(routeMetaData.createSidebarEntry){
+
+          routeConfig = {
             path : value.path,
-            order : _OldData.order || 99,
-            icon : _OldData.pathIcon,
-            display : _OldData.pathDisplayText,
-            component : value.component
+            order : routeMetaData.order || 99,
+            icon : routeMetaData.pathIcon,
+            display : routeMetaData.pathDisplayText,
+            component : value.component,
+            hasChildren : false
+          };
+
+          if(value.children){
+
+            let childRoutes:any[] = [];
+
+            value.children.forEach( childValue => {
+
+              let childRouteMetaData:any = childValue.data;
+              let childRouteConfig:any = {};
+
+              if(childRouteMetaData.createSidebarEntry){
+
+                childRouteConfig = {
+                  path : childValue.path,
+                  order : childRouteMetaData.order || 99,
+                  icon : childRouteMetaData.pathIcon,
+                  display : childRouteMetaData.pathDisplayText,
+                  component : childValue.component
+                };
+
+                childRoutes.push(childRouteConfig);
+
+              }
+            });
+
+            if(childRoutes.length > 0){
+              routeConfig.hasChildren = true;
+              routeConfig.children = childRoutes;
+              this.subMenusConfig[value.path] = false;
+            }
           }
-          _Array.push(_NewData);
         }
+
+        appRoutes.push(routeConfig);
 
       }
     });
-    this.appRoutes = _.sortBy(_Array, "order");
+    this.displayRoutes = _.sortBy(appRoutes, "order");
+    console.log(this.displayRoutes);
+    console.log("subMenusConfig",this.subMenusConfig);
   }
 }

@@ -14,22 +14,18 @@ import { AggregateComponent } from './aggregate.component';
                 component: AggregateComponent,
                 data: {
                     createSidebarEntry : true,
-                    pathDisplayText: "aggregate",
+                    pathDisplayText: "Aggregate",
                     pathIcon: `fa fa-server fa-lg pull-right`,
                     order: 2
                 }
-            },
-        { path: '', redirectTo: 'home', pathMatch: 'full' },
-        { path: '**', redirectTo: 'home', pathMatch: 'full' }
-    ])
+            }
+        ])
     ],
     declarations: [
         AggregateComponent
     ],
     exports : [
-        AggregateComponent,
-        RouterModule,
-        CommonModule
+        AggregateComponent
     ],
     providers: [ ]
 })

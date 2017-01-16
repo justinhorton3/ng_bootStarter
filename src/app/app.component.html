@@ -1,12 +1,15 @@
-<div>
-    <jbh-header></jbh-header>
-    <jbh-sidebar (tellyodaddy)="onLockSideBar($event)"></jbh-sidebar>
+<jbh-header (sidebarOpenEvent)="toggleMobleSidebar($event)"></jbh-header>
 
-    <div [ngClass]="{'sidebar-locked': sidebarLock }" class="router-container" >
-        <div class="main">
-            <div class="container-fluid">
-                <router-outlet></router-outlet>
-            </div>
+<jbh-sidebar
+        [sidebarOpenProp]="isSidebarOpen"
+        (sidebarLockEvent)="onLockSideBar($event)">
+</jbh-sidebar>
+
+<div [ngClass]="{'sidebar-locked': sidebarLock }" class="router-container" >
+    <div class="main">
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
+

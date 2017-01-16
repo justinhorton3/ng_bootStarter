@@ -1,6 +1,8 @@
+
+
 <div (mouseenter)="onToggleSidebar()"
      (mouseleave)="onToggleSidebar()"
-     [ngClass]="{'open': sidebarOpen}"
+     [ngClass]="{'open': sidebarOpenProp || sidebarOpen }"
      class="sidebar">
 
     <div class="nav-sidebar-header">
@@ -37,7 +39,7 @@
         </li>
     </ul>
 
-    <aside *ngIf="showAppDrawer" class="nav app-sidebar">
+    <section *ngIf="showAppDrawer" class="nav app-sidebar">
         <a href="javascript:void(0)" class="app-tile">
             <span class="app-tile-name">App 1</span>
         </a>
@@ -50,7 +52,5 @@
         <a href="javascript:void(0)" class="app-tile">
             <img src="../../../assets/img/add_app.svg" style="width: 80px; height: 80px;;" alt="add app icon">
         </a>
-    </aside>
-
-
+    </section>
 </div>

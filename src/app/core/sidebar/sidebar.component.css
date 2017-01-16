@@ -2,44 +2,39 @@
  * Sidebar
  */
 
-/*prevent user selection highlighting*/
-i {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
 
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
+  position: fixed;
+  top: 61px;
+  bottom: 0;
+  left: 0px;
+  width:225px;
+  right: auto;
+  z-index: 1000;
+  padding: 0 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   color: #A7A9AC;
+  background-color: #2B313D;
+  border-right: 1px solid #eee;
+
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
+
 
 @media (min-width: 768px) {
   .sidebar {
-    position: fixed;
-    top: 61px;
-    bottom: 0;
-    left: -175px;
-    width:225px;
-    right: auto;
-    z-index: 1000;
     display: block;
-    padding: 0 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #2B313D;
-    border-right: 1px solid #eee;
-
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    left: -175px;
   }
 }
 
 .sidebar.open {
+  display: block;
   left:0;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -121,9 +116,6 @@ i {
 .nav-sidebar > li > a > i {
   line-height: 20px;
 }
-
-
-
 
 
 

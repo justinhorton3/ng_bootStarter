@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import * as _ from 'lodash';
@@ -11,9 +11,9 @@ import * as _ from 'lodash';
 
 })
 
-export class SidebarComponent implements OnInit {
-
-  @Output() tellyodaddy: EventEmitter<boolean> = new EventEmitter<boolean>();
+export class SidebarComponent implements OnInit{
+  @Input() sidebarOpenProp:boolean;
+  @Output() sidebarLockEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   sidebarOpen: boolean = false;
   sidebarLocked: boolean = false;
@@ -26,9 +26,10 @@ export class SidebarComponent implements OnInit {
 
   constructor(
       private _router: Router
-  ) {}
+  ) { }
 
   onToggleSidebar(): void {
+
     if( !this.sidebarLocked ){
       this.sidebarOpen = !this.sidebarOpen;
     }
@@ -36,11 +37,13 @@ export class SidebarComponent implements OnInit {
     if( !this.sidebarOpen ){
       this.showAppDrawer = false;
     }
+    // console.log("Desktop sidebarLocked ",  this.sidebarLocked );
+    // console.log("Desktop sidebarOpen ",  this.sidebarOpen );
   }
 
   onLockSidebar(): void {
     this.sidebarLocked = !this.sidebarLocked;
-    this.tellyodaddy.emit(this.sidebarLocked);
+    this.sidebarLockEvent.emit(this.sidebarLocked);
 
     if( this.sidebarLocked ){
       this.sidebarOpen = true;
@@ -54,10 +57,9 @@ export class SidebarComponent implements OnInit {
   getSidebarLockIcon():any {
     return this.sidebarLocked ? 'fa fa-stop-circle-o' : 'fa fa-circle-o';
   }
-  isSidebarLocked() {
-    console.log(" isSidebarLocked Function Call " + this.sidebarLocked );
-    return this.sidebarLocked ? 'router-container sidebar-locked' : 'router-container';
 
+  isSidebarLocked() {
+    return this.sidebarLocked ? 'router-container sidebar-locked' : 'router-container';
   }
 
   sidebarItemClicked(route, childRoute){

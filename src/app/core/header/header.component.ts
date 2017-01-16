@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector : "jbh-header",
@@ -6,7 +6,11 @@ import {Component} from '@angular/core';
     styleUrls : [ "./header.component.css"]
 })
 
-export class HeaderComponent{
+export class HeaderComponent {
+
+    @Output() sidebarOpenEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+    isSidebarOpen: boolean = false;
     private isFullScreen: boolean = false;
 
     getFullScreenIcon():any {
@@ -28,5 +32,10 @@ export class HeaderComponent{
             cancelFullScreen.call(doc);
             this.isFullScreen = false;
         }
+    }
+
+    toggleMobleSidebar():any {
+        this.isSidebarOpen = !this.isSidebarOpen;
+        this.sidebarOpenEvent.emit(this.isSidebarOpen);
     }
 }

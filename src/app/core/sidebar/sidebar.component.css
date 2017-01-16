@@ -5,11 +5,10 @@
 
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
   position: fixed;
   top: 61px;
   bottom: 0;
-  left: 0px;
+  left: -225px;
   width:225px;
   right: auto;
   z-index: 1000;
@@ -20,25 +19,23 @@
   background-color: #2B313D;
   border-right: 1px solid #eee;
 
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
 }
 
 
 @media (min-width: 768px) {
   .sidebar {
-    display: block;
     left: -175px;
   }
 }
 
 .sidebar.open {
-  display: block;
   left:0;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
 }
 
 /* Sidebar navigation */
@@ -54,9 +51,9 @@
   z-index: 1000;
   background-color: #0a0a0a;
   padding: 10px;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
 }
 .app-tile {
   float: left;
@@ -135,13 +132,13 @@
 .nav-sidebar-child > li {
   max-height: 0;
   overflow: hidden;
-   -webkit-transition: all 0.15s ease;
-   -moz-transition: all 0.15s ease;
-   transition: all 0.15s ease;
+   -webkit-transition: all 0.30s ease-in-out;
+   -moz-transition: all 0.30s ease-in-out;
+   transition: all 0.30s ease-in-out;
 }
 .nav-sidebar-child.open > li {
   max-height: 200px;
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
 }

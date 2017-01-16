@@ -9,12 +9,20 @@ body {
 
 
 .main {
+    position: relative;
     margin: 0;
+    left: 0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 .sidebar-locked .main {
-    position: relative;
+    margin: 0;
     left: 225px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 .main .page-header {
@@ -22,15 +30,22 @@ body {
 }
 
 .router-container {
-    padding-left: 0;
+    margin-left: 0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 .router-container.sidebar-locked{
     margin-left: 0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+
 }
 
 @media( min-width:768px ) {
     .router-container.sidebar-locked{
-        margin-left: 175px;
+        margin-left: 225px;
     }
 
     .sidebar-locked .main {
@@ -41,15 +56,6 @@ body {
     .main {
         margin: 0 0 0 50px;
     }
-}
-@media (min-width: 768px) {
-    /*.main {*/
-        /*margin: 0;*/
-    /*}*/
-    /*.sidebar-locked .main {*/
-        /*position: relative;*/
-        /*left: 0;*/
-    /*}*/
 }
 
 

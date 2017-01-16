@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { AggregateComponent } from './aggregate.component';
 
+
+
 @NgModule({
     imports: [
         RouterModule,
@@ -22,12 +24,15 @@ import { AggregateComponent } from './aggregate.component';
         ])
     ],
     declarations: [
-        AggregateComponent
+        AggregateComponent,
+
     ],
     exports : [
         AggregateComponent
     ],
-    providers: [ ]
+    providers: [
+
+    ]
 })
 
 export class AggregateModule { }

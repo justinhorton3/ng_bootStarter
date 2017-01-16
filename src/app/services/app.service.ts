@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AppService {
   constructor(private http: Http) {
-      this.http = http;
+    this.http = http;
   }
 
   getShipments(): Observable<any> {
@@ -22,8 +22,8 @@ export class AppService {
   }
   createPing(ping): Observable<any> {
     return this.http.put("/aggregator/pings?id=" + ping.id,
-      {latitude: ping.latitude, longitude: ping.longitude, pingtime: new Date().toISOString()
-    }).map(res => res.text())
+        {latitude: ping.latitude, longitude: ping.longitude, pingtime: new Date().toISOString()
+        }).map(res => res.text())
   }
 
   getUserId(): Observable<any> {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 import * as _ from 'lodash';
 
@@ -25,8 +25,7 @@ export class SidebarComponent implements OnInit {
   subMenusConfig:any = {};
 
   constructor(
-      private _router: Router,
-      // private _sidebarState: SidebarState
+      private _router: Router
   ) {}
 
   onToggleSidebar(): void {
@@ -63,15 +62,15 @@ export class SidebarComponent implements OnInit {
 
   sidebarItemClicked(route, childRoute){
 
-    console.log("sidebarItemClicked : ", route);
+    // console.log("sidebarItemClicked : ", route);
 
     if(!childRoute){
       if(!route.hasChildren){
         this._router.navigateByUrl(route.path);
       }else{
-        console.log("submenuconfig before", this.subMenusConfig[route.path]);
+        // console.log("submenuconfig before", this.subMenusConfig[route.path]);
         this.subMenusConfig[route.path] = !(this.subMenusConfig[route.path]);
-        console.log("submenuconfig after", this.subMenusConfig[route.path]);
+        // console.log("submenuconfig after", this.subMenusConfig[route.path]);
       }
     }else{
       this._router.navigateByUrl(route.path + "/" + childRoute.path);
@@ -140,7 +139,7 @@ export class SidebarComponent implements OnInit {
       }
     });
     this.displayRoutes = _.sortBy(appRoutes, "order");
-    console.log(this.displayRoutes);
-    console.log("subMenusConfig",this.subMenusConfig);
+    // console.log(this.displayRoutes);
+    // console.log("subMenusConfig",this.subMenusConfig);
   }
 }

@@ -3,12 +3,6 @@
     "target": "http://localhost:8080",
     "ws": true,
     "secure": false
-  },
-  "/aggregator/getpings": {
-    "target": "http://localhost:4201",
-    "ws": true,
-    "secure": false,
-    "logLevel": "debug"
   }
 }
 

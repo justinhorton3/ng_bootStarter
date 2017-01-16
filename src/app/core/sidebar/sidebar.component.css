@@ -70,7 +70,14 @@ i {
   height: 80px;
   width: 80px;
 }
-
+.app-tile-name {
+  margin: 0 auto;
+  text-align: center;
+  width: 80px;
+  line-height: 80px;
+  position: relative;
+  display: block;
+}
 .nav-sidebar-header {
   font-size: 14px;
   color: #fff;

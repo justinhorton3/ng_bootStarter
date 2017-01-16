@@ -15,7 +15,6 @@ export class StompService {
   public connect(_webSocketUrl: string) : void {
     let self = this;
     let webSocket = new WebSocket(_webSocketUrl);
-
     this._stompClient = Stomp.over(webSocket);
     this._stompClient.connect({}, function (frame) {
       self._stompClient.subscribe('/topic/shipments', function (stompResponse) {

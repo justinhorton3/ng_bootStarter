@@ -40,101 +40,101 @@
                             </div>
                         </div>
                     </ul>
-                    <!--<form #f="ngForm" (ngSubmit)="createPing(f.value, f.valid)" novalidate>-->
-                        <!--<input type="text" class="form-control" id="pingId"-->
-                               <!--name="id" [(ngModel)]="shipment.newping.id"-->
-                               <!--#shipid="ngModel" style="display:none;">-->
-                        <!--<div class="panel panel-default">-->
-                            <!--<div class="panel-heading">-->
-                                <!--<h3 class="panel-title">Add Ping <button id="showPingButton" (click)="shipment.showNewPing = ! shipment.showNewPing" class="btn btn-default btn-xs pull-right" type="button">{{ shipment.showNewPing ? 'Hide' : 'Show'}}</button></h3>-->
-                            <!--</div>-->
-                            <!--<div class="panel-body" [hidden]="!shipment.showNewPing">-->
-                                <!--<div class="form-group">-->
-                                    <!--<ul class="list-group">-->
-                                        <!--<li class="list-group-item">-->
-                                            <!--<label for="pingLatitude">Latitude</label>-->
-                                            <!--<input type="text" class="form-control" id="pingLatitude"-->
-                                                   <!--name="latitude" [(ngModel)]="shipment.newping.latitude"-->
-                                                   <!--#origin="ngModel">-->
-                                        <!--</li>-->
-                                        <!--<li class="list-group-item">-->
-                                            <!--<label for="pingLongitude">Longitude</label>-->
-                                            <!--<input type="text" class="form-control" id="pingLongitude"-->
-                                                   <!--name="longitude" [(ngModel)]="shipment.newping.longitude"-->
-                                                   <!--#destination="ngModel">-->
-                                        <!--</li>-->
-                                    <!--</ul>-->
-                                <!--</div>-->
-                                <!--<button type="submit" class="btn btn-primary btn-sm pull-right" id="addPingButton">Add Ping</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</form>-->
+                    <form #f="ngForm" (ngSubmit)="createPing(f.value, f.valid)" novalidate>
+                        <input type="text" class="form-control" id="pingId"
+                               name="id" [(ngModel)]="shipment.newping.id"
+                               #shipid="ngModel" style="display:none;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Add Ping <button id="showPingButton" (click)="shipment.showNewPing = ! shipment.showNewPing" class="btn btn-default btn-xs pull-right" type="button">{{ shipment.showNewPing ? 'Hide' : 'Show'}}</button></h3>
+                            </div>
+                            <div class="panel-body" [hidden]="!shipment.showNewPing">
+                                <div class="form-group">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <label for="pingLatitude">Latitude</label>
+                                            <input type="text" class="form-control" id="pingLatitude"
+                                                   name="latitude" [(ngModel)]="shipment.newping.latitude"
+                                                   #origin="ngModel">
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label for="pingLongitude">Longitude</label>
+                                            <input type="text" class="form-control" id="pingLongitude"
+                                                   name="longitude" [(ngModel)]="shipment.newping.longitude"
+                                                   #destination="ngModel">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm pull-right" id="addPingButton">Add Ping</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <!--<form #f="ngForm" (ngSubmit)="createShipment(f.value, f.valid)" novalidate>-->
-                <!--<div class="panel panel-default">-->
-                    <!--<div class="panel-heading">-->
-                        <!--<h3 class="panel-title">Add Shipment</h3>-->
-                    <!--</div>-->
-                    <!--<div class="panel-body">-->
+            <form #f="ngForm" (ngSubmit)="createShipment(f.value, f.valid)" novalidate>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Add Shipment</h3>
+                    </div>
+                    <div class="panel-body">
 
-                        <!--<div class="form-group">-->
-                            <!--<ul class="list-group">-->
-                                <!--<li class="list-group-item">-->
-                                    <!--<label for="shipmentShipid">Shipid</label>-->
-                                    <!--<input type="text" class="form-control" id="shipmentShipid"-->
-                                           <!--name="shipid" [(ngModel)]="newShipment.shipid"-->
-                                           <!--#shipid="ngModel">-->
-                                <!--</li>-->
-                                <!--<li class="list-group-item">-->
-                                    <!--<label for="shipmentOrigin">Origin</label>-->
-                                    <!--<input type="text" class="form-control" id="shipmentOrigin"-->
-                                           <!--name="origin" [(ngModel)]="newShipment.origin"-->
-                                           <!--#origin="ngModel">-->
-                                <!--</li>-->
-                                <!--<li class="list-group-item">-->
-                                    <!--<label for="shipmentDestination">Destination</label>-->
-                                    <!--<input type="text" class="form-control" id="shipmentDestination"-->
-                                           <!--name="destination" [(ngModel)]="newShipment.destination"-->
-                                           <!--#destination="ngModel">-->
-                                <!--</li>-->
-                                <!--<li class="list-group-item">-->
-                                    <!--<label for="shipmentStatus">Status</label>-->
-                                    <!--<input type="text" class="form-control" id="shipmentStatus"-->
-                                           <!--name="status" [(ngModel)]="newShipment.status"-->
-                                           <!--#status="ngModel">-->
-                                <!--</li>-->
-                            <!--</ul>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<div class="panel panel-default">-->
-                                <!--<div class="panel-heading">-->
-                                    <!--<h5 class="panel-title">Driver</h5>-->
-                                <!--</div>-->
-                                <!--<div class="panel-body">-->
-                                    <!--<ul class="list-group">-->
-                                        <!--<li class="list-group-item">-->
-                                            <!--<label for="shipmentDriverName">Name</label>-->
-                                            <!--<input type="text" class="form-control" id="shipmentDriverName"-->
-                                                   <!--name="drivername" [(ngModel)]="newShipment.driver.name"-->
-                                                   <!--#drivername="ngModel">-->
-                                        <!--</li>-->
-                                        <!--<li class="list-group-item">-->
-                                            <!--<label for="shipmentDriverPhone">Phone</label>-->
-                                            <!--<input type="text" class="form-control" id="shipmentDriverPhone"-->
-                                                   <!--name="driverphone" [(ngModel)]="newShipment.driver.phoneNumber"-->
-                                                   <!--#driverphone="ngModel">-->
-                                        <!--</li>-->
-                                    <!--</ul>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<button type="submit" class="btn btn-primary btn-sm pull-right">Create Shipment</button>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</form>-->
+                        <div class="form-group">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <label for="shipmentShipid">Shipid</label>
+                                    <input type="text" class="form-control" id="shipmentShipid"
+                                           name="shipid" [(ngModel)]="newShipment.shipid"
+                                           #shipid="ngModel">
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="shipmentOrigin">Origin</label>
+                                    <input type="text" class="form-control" id="shipmentOrigin"
+                                           name="origin" [(ngModel)]="newShipment.origin"
+                                           #origin="ngModel">
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="shipmentDestination">Destination</label>
+                                    <input type="text" class="form-control" id="shipmentDestination"
+                                           name="destination" [(ngModel)]="newShipment.destination"
+                                           #destination="ngModel">
+                                </li>
+                                <li class="list-group-item">
+                                    <label for="shipmentStatus">Status</label>
+                                    <input type="text" class="form-control" id="shipmentStatus"
+                                           name="status" [(ngModel)]="newShipment.status"
+                                           #status="ngModel">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h5 class="panel-title">Driver</h5>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <label for="shipmentDriverName">Name</label>
+                                            <input type="text" class="form-control" id="shipmentDriverName"
+                                                   name="drivername" [(ngModel)]="newShipment.driver.name"
+                                                   #drivername="ngModel">
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label for="shipmentDriverPhone">Phone</label>
+                                            <input type="text" class="form-control" id="shipmentDriverPhone"
+                                                   name="driverphone" [(ngModel)]="newShipment.driver.phoneNumber"
+                                                   #driverphone="ngModel">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm pull-right">Create Shipment</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

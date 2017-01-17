@@ -83,13 +83,13 @@
 							<directory>target</directory>
 						</fileset>
 						
-						<!--Remove the following filesets to speed up compile time-->
-						<!--<fileset>-->
-							<!--<directory>node</directory>-->
-						<!--</fileset>-->
-						<!--<fileset>-->
-							<!--<directory>node_modules</directory>-->
-						<!--</fileset>-->
+						Remove the following filesets to speed up compile time
+						<fileset>
+							<directory>node</directory>
+						</fileset>
+						<fileset>
+							<directory>node_modules</directory>
+						</fileset>
 					
 					</filesets>
 				</configuration>

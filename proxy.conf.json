@@ -1,8 +1,6 @@
 {
-  "/aggregator/*":{
-    "target": "http://localhost:8080",
-    "ws": true,
-    "secure": false
+  "/aggregator/**":{
+    "target": "http://localhost:8080"
   }
 }
 

@@ -55,9 +55,12 @@ export class AggregateComponent implements OnInit {
     ngOnInit() {    }
 
     getShipments() {
+
         this.appService.getShipments().subscribe(shipments => {
+            console.log(shipments);
 
             shipments.forEach(function(item){
+
                 if(item.pings) {
                     item.pings.sort(function (a, b) {
                         return new Date(b.pingtime).getTime() - new Date(a.pingtime).getTime();

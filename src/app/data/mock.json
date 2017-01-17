@@ -1,0 +1,8 @@
+[
+  {"id": 0, "shipid": 1000, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Trace", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []},
+  {"id": 1, "shipid": 1001, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Billy", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []},
+  {"id": 2, "shipid": 1002, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Alex", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []},
+  {"id": 3, "shipid": 1003, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Sam", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []},
+  {"id": 4, "shipid": 1004, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Joseph", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []},
+  {"id": 5, "shipid": 1005, "origin": "Atlanta, GA", "destination": "Fort Smith, AR", "status": "active", "driver":{ "name": "Matt", "phoneNumber": "501-785-3453"}, "user": "JISATW2", "pings": []}
+]
